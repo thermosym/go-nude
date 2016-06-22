@@ -4,6 +4,11 @@ Nudity detection with Go.
 
 (Go porting from https://github.com/pa7/nude.js)
 
+## Install
+```bash
+go get github.com/thermosym/go-nude
+```
+
 ## Example
 
 ```go
