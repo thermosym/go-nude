@@ -3,10 +3,13 @@
 Nudity detection with Go.
 
 (Go porting from https://github.com/pa7/nude.js)
+
 (Fork from https://github.com/koyachi/go-nude)
 
 ## Install
 ```bash
+# before go get, you need to set up the golang env, like GOPATH etc.
+go get github.com/gin-gonic/gin
 go get github.com/thermosym/go-nude
 ```
 
