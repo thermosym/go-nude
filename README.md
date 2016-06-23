@@ -3,46 +3,33 @@
 Nudity detection with Go.
 
 (Go porting from https://github.com/pa7/nude.js)
+(Fork from https://github.com/koyachi/go-nude)
 
 ## Install
 ```bash
 go get github.com/thermosym/go-nude
 ```
 
-## Example
-
-```go
-package main
-
-import (
-	"fmt"
-	"log"
-    "github.com/koyachi/go-nude"
-)
-
-func main() {
-	imagePath := "images/test2.jpg"
-
-	isNude, err := nude.IsNude(imagePath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("isNude = %v\n", isNude)
-}
-
+## Build
+```bash
+cd server # go into server subfolder
+go build # it will generate an executable file 'server'
 ```
 
-## Other implementations
+## Usage
 
-- [nude.js](http://www.patrick-wied.at/static/nudejs/)
-- [nude.rb](https://github.com/mitukiii/nude.rb)
-- [nude.py](https://github.com/hhatto/nude.py)
+```bash
+./server [-p port_number]
+```
 
+## HTTP Access
+```bash
+curl --request POST \
+  --url http://localhost:8080/check \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: multipart/form-data' \
+  --form 'file=@/Path/To/Photo'
+```
 
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## License
+[MIT License](LICENSE.txt)
