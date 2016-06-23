@@ -36,6 +36,8 @@ func ErrResponse(reason string) *CheckResponse {
 }
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
+
 	// parse the program input args
 	default_usage_info := "Usage: $./server [-p port_number]"
 	var port = 8080     // default port number

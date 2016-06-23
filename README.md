@@ -26,10 +26,19 @@ go build # it will generate an executable file 'server'
 ```bash
 curl --request POST \
   --url http://localhost:8080/check \
-  --header 'cache-control: no-cache' \
   --header 'content-type: multipart/form-data' \
   --form 'file=@/Path/To/Photo'
 ```
+
+Response:
+```json
+{
+  "is_nude": true,
+  "success": true,
+  "message": "ok"
+}
+```
+
 
 ## License
 [MIT License](LICENSE.txt)
